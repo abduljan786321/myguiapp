@@ -32,14 +32,6 @@ jobs:
             libtinfo5 cmake libffi-dev libssl-dev \
             build-essential ccache
 
-      - name: Install Android SDK command-line tools
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK packages and accept licenses
-        run: |
-          yes | sdkmanager --licenses
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
-
       - name: Install Python build tools
         run: |
           python -m pip install --upgrade pip
